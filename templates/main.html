@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+ <body>
+  <h1>PVsync-demo</h1>
+  
+
+</body>
+
+<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+
+<div class="chart" id="chart0">
+  <script type='text/javascript'>
+  var graphs = {{ graphJSON | safe }};
+  Plotly.plot('chart0',graphs,{});
+  </script>
+</div>
+
+
+<div class="chart" id="chart1">
+  <script type='text/javascript'>
+  var graphs1 = {{ graphJSON1 | safe }};
+  Plotly.plot('chart1',graphs1,{});
+  </script>
+</div>
+
+
+
+</html>

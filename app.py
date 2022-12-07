@@ -30,8 +30,8 @@ def main():
         (new_lvp_time, new_lvp_val, new_sti_time, new_sti_val, ori_lvp) = rebuild_p_waveform(working_table,grad2_peak_idx2,edp_index,sti_rescale_factor, dti_rescale_factor)
 
         fig.add_trace(go.Scatter(x=new_lvp_time,y=new_lvp_val,visible=False))
-        fig.add_trace(go.Scatter(x=[new_sti_time[-1]],y=[new_sti_val[-1]],visible=False))
-        fig.add_trace(go.Scatter(x=[new_lvp_time[-1]],y=[new_lvp_val[-1]],visible=False))
+        fig.add_trace(go.Scatter(x=[new_sti_time[-1]],y=[new_sti_val[-1]],marker=dict(size=16),visible=False))
+        fig.add_trace(go.Scatter(x=[new_lvp_time[-1]],y=[new_lvp_val[-1]],marker=dict(size=16),visible=False))
         fig.add_trace(go.Scatter(x=VOL['time'],y=VOL['vol'],visible=True))
 
 
@@ -67,8 +67,10 @@ def main():
 
     fig.update_layout(
         xaxis_title="time (ms)",
-        width=500,
-        height=500,
+        width=1000,
+        height=1000,
+        minreducedwidth=250,
+        minreducedheight=250,
         font=dict(
             size=20
         )
@@ -101,8 +103,10 @@ def main():
     fig1.update_layout(
         xaxis_title="Volume (mL)",
         yaxis_title="Pressure (mmHg)",
-        width=500,
-        height=500,
+        width=1000,
+        height=1000,
+        minreducedwidth=250,
+        minreducedheight=250,
         updatemenus=[
             dict(
                 buttons=list([
@@ -114,7 +118,7 @@ def main():
                     ]),
                 type = "buttons",
                 direction="right",
-                pad={"r": 10, "t": 10},
+                pad={"r": 10, "t": 10,"b":10},
                 showactive=True,
                 x=0.15,
                 xanchor="left",

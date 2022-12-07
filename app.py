@@ -8,6 +8,7 @@ from pvsync_sample import *
 from plotly.subplots import make_subplots
 
 
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -120,7 +121,7 @@ def main():
                 direction="right",
                 pad={"r": 10, "t": 10,"b":10},
                 showactive=True,
-                x=0.15,
+                x=0,
                 xanchor="left",
                 y=1.25,
                 yanchor="top"

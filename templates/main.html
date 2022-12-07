@@ -15,14 +15,15 @@
   </script>
 </div>
 
-
 <div class="chart" id="chart1">
   <script type='text/javascript'>
   var graphs1 = {{ graphJSON1 | safe }};
   Plotly.plot('chart1',graphs1,{});
   </script>
 </div>
-
+<div class="slidecontainer">
+  <input type="range" min="40" max="150" value="66" class="slider" id="myRange">
+</div>
 
 
 </html>

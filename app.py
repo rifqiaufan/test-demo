@@ -35,7 +35,7 @@ def main():
         fig.add_trace(go.Scatter(x=VOL['time'],y=VOL['vol'],visible=True))
 
 
-    fig.data[26].visible = True
+    fig.data[28].visible = True
 
     # Create and add slider
     steps = []
@@ -56,7 +56,7 @@ def main():
     sliders = [dict(
     active=26,
     currentvalue={"prefix": "HR slider"},
-    pad={"t": 20},
+    pad={"t": 60},
     steps=steps
     )]
 
@@ -67,69 +67,12 @@ def main():
 
     fig.update_layout(
         xaxis_title="time (ms)",
+        width=500,
+        height=500,
+        font=dict(
+            size=20
+        )
     )
-
-    # fig.update_layout(
-    #     updatemenus=[
-    #         dict(
-    #             buttons=list([
-    #             dict(
-    #                 args=[{"visible": [True,True,True,True]}],
-    #                 label="Show Volume",
-    #                 method="restyle"
-    #                 ),
-    #             dict(
-    #                 args=[{"visible": [True,True,True,False]}],
-    #                 label="Hide Volume",
-    #                 method="restyle"
-    #             ),
-    #                 ]),
-    #             type = "buttons",
-    #             direction="right",
-    #             pad={"r": 10, "t": 10},
-    #             showactive=True,
-    #             x=0.15,
-    #             xanchor="left",
-    #             y=1.25,
-    #             yanchor="top"
-    #         ),
-    #         dict(
-    #             buttons=list([
-    #             dict(
-    #                 args=["visible", False],
-    #                 label="Auto",
-    #                 method="restyle"
-    #                 ),
-    #             dict(
-    #                 args=["visible", True],
-    #                 label="Manual",
-    #                 method="restyle"
-    #             ),
-    #                 ]),
-    #             type = "buttons",
-    #             direction="right",
-    #             pad={"r": 10, "t": 10},
-    #             showactive=True,
-    #             x=0.4,
-    #             xanchor="left",
-    #             y=1.25,
-    #             yanchor="top"
-    #         ),         
-    #     ]
-    # )
-
-
-
-    
-
-    # fig.update_layout(
-    #     annotations=[
-    #         dict(text="Volume Data", x=0.08, xref="paper", y=1.2, yref="paper",
-    #         align="left", showarrow=False),
-    #         dict(text="Sync PV", x=0.37, xref="paper", y=1.2, yref="paper",
-    #         align="left", showarrow=False),
-    #     ]
-    # )
 
     
     graphJSON = json.dumps(fig,cls=plotly.utils.PlotlyJSONEncoder)
@@ -156,6 +99,10 @@ def main():
             )
 
     fig1.update_layout(
+        xaxis_title="Volume (mL)",
+        yaxis_title="Pressure (mmHg)",
+        width=500,
+        height=500,
         updatemenus=[
             dict(
                 buttons=list([
@@ -174,9 +121,10 @@ def main():
                 y=1.25,
                 yanchor="top"
             )              
-        
-          
-        ]
+        ],
+        font=dict(
+            size=20
+        )
     )
 
 
